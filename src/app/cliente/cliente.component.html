@@ -1,0 +1,90 @@
+<form class="form-box" [formGroup]="form" (ngSubmit)="cadastrar()">
+  <div class="container">
+    <h1>Novo Cliente</h1>
+    <p>Preencha os campos para cadastrar um novo cliente.</p>
+    <hr />
+
+    <label for="nome"><b>Nome completo:</b></label>
+    <input
+      type="text"
+      placeholder="digite seu nome"
+      name="nome"
+      id="nome"
+      maxlength="64"
+      required
+      formControlName="nome"
+    />
+    <label for="cpf"><b>CPF:</b></label>
+    <input
+      type="text"
+      placeholder="digite seu CPF:"
+      name="documento"
+      id="documentp"
+      maxlength="14"
+      required
+      formControlName="cpf"
+    />
+
+    <label for="email"><b>Email:</b></label>
+    <input
+      type="text"
+      placeholder="digite seu email"
+      name="email"
+      id="email"
+      maxlength="32"
+      required
+      formControlName="email"
+    />
+
+    <label for="aniver"><b>Data de aniversario</b></label>
+    <input
+      type="Date"
+      placeholder="digite seu aniversario"
+      name="aniversario"
+      id="aniversario"
+      required
+      formControlName="aniver"
+    />
+    <br />
+
+    <hr />
+    <p>
+      Ao criar uma conta você concorta com nossos
+      <a href="#">Termos & privacidade</a>.
+    </p>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+</form>
+<div class="container signin"></div>
+
+<div>
+  <table id="tabelinha">
+    <h2>Meus Clientes</h2>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Data de Nascimento</th>
+      <th>Idade</th>
+      <th>CPF</th>
+      <th>CPF Válido</th>
+      <th>E-mail</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let cliente of list">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.aniver | date: "dd/MM/yyyy" }}</td>
+      <td>{{ cliente.idade }}</td>
+      <td>{{ cliente.documento }}</td>
+      <td>{{ cliente.documentoValido }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>
+        <button class="button button1" (click)="editar(cliente)">Editar</button>
+        <button class="button button2" (click)="apagar(cliente)">
+          Deletar
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

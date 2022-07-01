@@ -1,0 +1,84 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(238, 237, 237);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 20px;
+  background-color: white;
+  margin-top: 40px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 16px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 10px;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #c2874f;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: #c2874f;
+}
+
+.signin {
+  background-color: white;
+  text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 10px;
+}
+
+th {
+  border: 1px solid gray;
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+#tabelinha {
+  background-color: #d4c5b6;
+}

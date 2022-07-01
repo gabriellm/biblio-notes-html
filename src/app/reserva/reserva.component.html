@@ -1,0 +1,84 @@
+<form class="form-box" [formGroup]="form" (ngSubmit)="reservar()">
+  <div class="container">
+    <h1>Reserva</h1>
+    <p>Preencha os campos para realizar a reserva da VideoTeca:</p>
+    <hr />
+
+    <label for="nome"><b>Nome do reservante:</b></label>
+    <input
+      type="text"
+      placeholder="digite o nome do reservante:"
+      name="nome"
+      id="nome"
+      maxlength="64"
+      required
+      formControlName="nome"
+    />
+    <label for="cpf"><b>CPF do reservante:</b></label>
+    <input
+      type="text"
+      placeholder="digite seu CPF:"
+      name="documento"
+      id="documentp"
+      maxlength="14"
+      required
+      formControlName="cpf"
+    />
+
+    <label for="email"><b>Email do reservante:</b></label>
+    <input
+      type="text"
+      placeholder="digite seu email"
+      name="email"
+      id="email"
+      maxlength="32"
+      required
+      formControlName="email"
+    />
+
+    <label for="reserv"><b>Dia da reserva</b></label>
+    <input
+      type="Date"
+      placeholder="digite o dia desejado para reserva"
+      name="reserva"
+      id="reserva"
+      required
+      formControlName="reserv"
+    />
+    <br />
+
+    <hr />
+
+    <button type="submit" class="registerbtn">Reservar</button>
+  </div>
+</form>
+<div class="container signin"></div>
+
+<img class="imagem" src="../../assets/gummy-pc.png" alt="" />
+
+<div>
+  <table id="tabelinha">
+    <h2>reservas ativas:</h2>
+    <tr>
+      <th>ID</th>
+      <th>reservante</th>
+      <th>Data reservada</th>
+      <th>CPF</th>
+      <th>E-mail</th>
+      <th>Ações</th>
+    </tr>
+    <tr *ngFor="let reserva of list">
+      <td>{{ reserva.id }}</td>
+      <td>{{ reserva.nome }}</td>
+      <td>{{ reserva.reserv | date: "dd/MM/yyyy" }}</td>
+      <td>{{ reserva.documento }}</td>
+      <td>{{ reserva.email }}</td>
+      <td>
+        <button class="button button1" (click)="editar(reserva)">Editar</button>
+        <button class="button button2" (click)="apagar(reserva)">
+          Deletar
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

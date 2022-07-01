@@ -1,0 +1,32 @@
+.box-main {
+  margin-top: 100px;
+  margin-left: 200px;
+  margin-right: 200px;
+  padding-top: 50px;
+  padding-left: 50px;
+  background-color: #cc9f75;
+}
+
+.sinopse {
+  font-size: 20px;
+}
+
+.titulo-pagina {
+  font-size: 70px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.titulo {
+  font-size: 35px;
+}
+
+.livro-content {
+  display: flex;
+
+  img {
+    margin-right: 30px;
+    margin-bottom: 120px;
+  }
+}
