@@ -5,7 +5,6 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Observable } from 'rxjs';
 import { Cliente } from '../domain/cliente';
 import { ClienteModel } from '../model/cliente-model';
 import { ClienteService } from '../service/cliente.service';
@@ -21,7 +20,11 @@ export class ClienteComponent implements OnInit {
   form: FormGroup = this.formBuilder.group({
     id: new FormControl(null),
     nome: new FormControl(null, [Validators.required, Validators.minLength(2)]),
-    cpf: new FormControl(null, [Validators.required, Validators.minLength(11)]),
+    cpf: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(11),
+      Validators.maxLength(11),
+    ]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     aniver: new FormControl(null, [Validators.required]),
   });
@@ -69,6 +72,22 @@ export class ClienteComponent implements OnInit {
     this.form.controls['cpf'].setValue(cliente.documento);
     this.form.controls['aniver'].setValue(cliente.aniver);
     this.form.controls['email'].setValue(cliente.email);
+  }
+
+  ordenarNome(): void {
+    this.clienteService.ordenarPorNome().subscribe((domains: Cliente[]) => {
+      if (domains) {
+        this.list = domains;
+      }
+    });
+  }
+
+  ordenarAniver(): void {
+    this.clienteService.ordenarPorAniver().subscribe((domains: Cliente[]) => {
+      if (domains) {
+        this.list = domains;
+      }
+    });
   }
 
   apagar(cliente: Cliente): void {

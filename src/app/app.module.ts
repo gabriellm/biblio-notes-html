@@ -7,11 +7,9 @@ import { AppComponent } from './app.component';
 import { SobreModule } from './sobre/sobre/sobre.module';
 import { MenuModule } from './menu/menu.module';
 import { ClienteModule } from './cliente/cliente.module';
-import { PedidoModule } from './pedido/pedido.module';
-import { PedidoComponent } from './pedido/pedido.component';
 
 @NgModule({
-  declarations: [AppComponent, PedidoComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -19,7 +17,6 @@ import { PedidoComponent } from './pedido/pedido.component';
     SobreModule,
     MenuModule,
     ClienteModule,
-    PedidoModule,
     ReservaModule,
   ],
   providers: [],

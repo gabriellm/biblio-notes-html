@@ -24,6 +24,14 @@ export class ClienteService {
     return this.http.get<Cliente[]>(this.url + 'consultar');
   }
 
+  ordenarPorNome(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.url + 'ordenarNome');
+  }
+
+  ordenarPorAniver(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.url + 'ordenarAniver');
+  }
+
   remover(id: string): Observable<Cliente> {
     return this.http.delete<Cliente>(this.url + 'remover/' + id);
   }

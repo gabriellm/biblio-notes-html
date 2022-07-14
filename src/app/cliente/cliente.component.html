@@ -7,7 +7,7 @@
     <label for="nome"><b>Nome completo:</b></label>
     <input
       type="text"
-      placeholder="digite seu nome"
+      placeholder="Ex: Biblio Notes da Silva"
       name="nome"
       id="nome"
       maxlength="64"
@@ -17,7 +17,7 @@
     <label for="cpf"><b>CPF:</b></label>
     <input
       type="text"
-      placeholder="digite seu CPF:"
+      placeholder="Ex: 000.000.000-00"
       name="documento"
       id="documentp"
       maxlength="14"
@@ -28,7 +28,7 @@
     <label for="email"><b>Email:</b></label>
     <input
       type="text"
-      placeholder="digite seu email"
+      placeholder="Ex: biblioNotes@gmail.com"
       name="email"
       id="email"
       maxlength="32"
@@ -39,7 +39,7 @@
     <label for="aniver"><b>Data de aniversario</b></label>
     <input
       type="Date"
-      placeholder="digite seu aniversario"
+      placeholder="Ex: 00/00/0000"
       name="aniversario"
       id="aniversario"
       required
@@ -61,8 +61,14 @@
 <div>
   <table id="tabelinha">
     <h2>Meus Clientes</h2>
+    <button class="button button1" (click)="ordenarNome()">
+      Ordenar por Nome
+    </button>
+    <button class="button button1" (click)="ordenarAniver()">
+      Ordenar por Data de aniversario
+    </button>
     <tr>
-      <th>ID</th>
+      <th>Código de identificacão</th>
       <th>Nome</th>
       <th>Data de Nascimento</th>
       <th>Idade</th>
